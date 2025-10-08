@@ -497,8 +497,6 @@ dependencies = [
     { name = "scipy" },
     { name = "torch" },
     { name = "torch-geometric" },
-    { name = "torch-scatter" },
-    { name = "torch-sparse" },
     { name = "torchvision" },
 ]
 
@@ -510,8 +508,6 @@ requires-dist = [
     { name = "scipy", specifier = "==1.13.1" },
     { name = "torch", specifier = "==2.3.1" },
     { name = "torch-geometric", specifier = "==2.6.1" },
-    { name = "torch-scatter", specifier = "==2.1.2" },
-    { name = "torch-sparse", specifier = "==0.6.18" },
     { name = "torchvision", specifier = "==0.18.1" },
 ]
 
@@ -1289,21 +1285,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/e8/81/e1b015494cb9e0bf4
 wheels = [
     { url = "https://files.pythonhosted.org/packages/03/9f/157e913626c1acfb3b19ce000b1a6e4e4fb177c0bc0ea0c67ca5bd714b5a/torch_geometric-2.6.1-py3-none-any.whl", hash = "sha256:8faeb353f9655f7dbec44c5e0b44c721773bdfb279994da96b9b8b12fd30f427", size = 1135632, upload-time = "2024-09-26T08:11:27.194Z" },
 ]
-
-[[package]]
-name = "torch-scatter"
-version = "2.1.2"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f5/ab/2a44ecac0f891dd0d765fc59ac8d277c6283a31907626560e72685df2ed6/torch_scatter-2.1.2.tar.gz", hash = "sha256:69b3aa435f2424ac6a1bfb6ff702da6eb73b33ca0db38fb26989c74159258e47", size = 108045, upload-time = "2023-10-06T08:49:07.081Z" }
-
-[[package]]
-name = "torch-sparse"
-version = "0.6.18"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "scipy" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/42/e2/cddf10a8e32a0b214918943e6173672c8ec11000e69c36dad8e6b141cb60/torch_sparse-0.6.18.tar.gz", hash = "sha256:2f14c510a6e93f404c6ea357210615b3c15a71731f9dbd86f25434e34fb5a741", size = 209982, upload-time = "2023-10-06T08:51:55.326Z" }
 
 [[package]]
 name = "torchvision"

@@ -1,4 +1,4 @@
-import torch, os, copy, torch_geometric
+import torch, os, copy
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
@@ -375,25 +375,16 @@ class Trainer(nn.Module):
                                 pin_memory=train_dataloaders[task].pin_memory,
                 )
         else:
-            try:
-                new_train_dataloaders = torch.utils.data.DataLoader(
-                                train_dataloaders.dataset,
-                                batch_size=int(train_dataloaders.batch_size//2),
-                                shuffle=True,
-                                num_workers=train_dataloaders.num_workers,
-                                drop_last=train_dataloaders.drop_last,
-                                pin_memory=train_dataloaders.pin_memory,
-                )
-            except:
-                # for QM9 only
-                new_train_dataloaders = torch_geometric.loader.DataLoader(
-                                train_dataloaders.dataset,
-                                batch_size=int(train_dataloaders.batch_size//2),
-                                shuffle=True,
-                                num_workers=train_dataloaders.num_workers,
-                                drop_last=train_dataloaders.drop_last,
-                                pin_memory=train_dataloaders.pin_memory,
-                )
+            
+            new_train_dataloaders = torch.utils.data.DataLoader(
+                            train_dataloaders.dataset,
+                            batch_size=int(train_dataloaders.batch_size//2),
+                            shuffle=True,
+                            num_workers=train_dataloaders.num_workers,
+                            drop_last=train_dataloaders.drop_last,
+                            pin_memory=train_dataloaders.pin_memory,
+            )
+
 
         if self.weighting == 'FORUM':
             lambda_buffer = np.zeros([self.task_num])
