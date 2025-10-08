@@ -1,5 +1,20 @@
-[tool.poetry]
+[project]
 name = "LibMTL"
 version = "1.1.5"
 description = "A PyTorch Library for Multi-Task Learning"
-authors = ["Baijiong Lin <bj.lin.email@gmail.com>"]
+authors = [{ name = "Baijiong Lin", email = "bj.lin.email@gmail.com" }]
+dependencies = [
+    "cvxpy==1.6.5",
+    "numpy==1.26.3",
+    "qpsolvers==4.7.0",
+    "scipy==1.13.1",
+    "torch==2.3.1",
+    "torch-geometric==2.6.1",
+    "torch-scatter==2.1.2",
+    "torch-sparse==0.6.18",
+    "torchvision==0.18.1",
+]
+
+[tool.uv.extra-build-dependencies]
+torch-scatter = ["torch"]
+torch-sparse = ["torch"]
