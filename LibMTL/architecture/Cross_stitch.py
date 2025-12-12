@@ -23,6 +23,7 @@ class _transform_resnet_cross(nn.Module):
         self.cross_unit = nn.Parameter(torch.ones(4, self.task_num, self.task_num))
         
     def forward(self, inputs):
+        inputs = inputs.unsqueeze(1)  # Add channel dimension
         s_rep = {task: self.resnet_conv[task](inputs) for task in self.task_name}
         ss_rep = {i: [0]*self.task_num for i in range(4)}
         for i in range(4):

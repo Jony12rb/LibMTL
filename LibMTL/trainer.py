@@ -242,6 +242,7 @@ class Trainer(nn.Module):
             return_weight (bool): if ``True``, the loss weights will be returned.
         '''
         train_loader, train_batch = self._prepare_dataloaders(train_dataloaders)
+        print("Number of training batches:", train_batch)
         train_batch = max(train_batch) if self.multi_input else train_batch
         
         self.batch_weight = np.zeros([self.task_num, epochs, train_batch])
